@@ -42,3 +42,56 @@ string[] createArray(int x)
 
     return array;
 }
+
+//Составление нового массива элементы, которого не длинее 3 символов
+string[] sortedArray(string[] array)
+{
+    string[] sortedArray = new string[array.Length];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            sortedArray[i] = array[i];
+        }
+        else;
+    }
+    return sortedArray;
+}
+
+//Создание красивого массива из массива элементы, которого не длинее 3 символов
+string[] beautSortedArray(string[] sortedArray)
+{
+    int count = 0;
+
+    for (int i = 0; i < sortedArray.Length; i++)
+    {
+        if (sortedArray[i] == 0)
+        {
+            count = count;
+        }
+        else
+        {
+            count++;
+        }
+    }
+
+    string[] beautSortedArray = new string[count];
+
+    count = 0;
+
+    for (int i = 0; i < sortedArray.Length; i++)
+    {
+        if (sortedArray[i] == 0)
+        {
+            count = count;
+        }
+        else
+        {
+            beautSortedArray[count] = sortedArray[i];
+            count++;
+        }
+    }
+
+    return beautSortedArray;
+}
