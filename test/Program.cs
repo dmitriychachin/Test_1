@@ -35,7 +35,7 @@ string[] createArray(int x)
 
     for (int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine($"Введите элемент №{i}");
+        Console.WriteLine($"Введите элемент №{i + 1}");
 
         array[i] = Console.ReadLine();
     }
@@ -48,50 +48,37 @@ string[] sortedArray(string[] array)
 {
     string[] sortedArray = new string[array.Length];
 
+    int j = 0;
+
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            sortedArray[i] = array[i];
+            sortedArray[j] = array[i];
+            j += 1;
         }
         else;
     }
     return sortedArray;
 }
 
-//Создание красивого массива из массива элементы, которого не длинее 3 символов
-string[] beautSortedArray(string[] sortedArray)
+
+
+//Печать массива
+void PrintArray(string[] array)
 {
-    int count = 0;
-
-    for (int i = 0; i < sortedArray.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (sortedArray[i] == 0)
-        {
-            count = count;
-        }
-        else
-        {
-            count++;
-        }
+        Console.Write($"{array[i]} ");
     }
-
-    string[] beautSortedArray = new string[count];
-
-    count = 0;
-
-    for (int i = 0; i < sortedArray.Length; i++)
-    {
-        if (sortedArray[i] == 0)
-        {
-            count = count;
-        }
-        else
-        {
-            beautSortedArray[count] = sortedArray[i];
-            count++;
-        }
-    }
-
-    return beautSortedArray;
 }
+
+int x = GetNumber("Введите количество элементов в массиве");
+string[] firstArray = createArray(x);
+Console.WriteLine();
+Console.WriteLine("Вы ввели этот массив");
+PrintArray(firstArray);
+string[] sortArray = sortedArray(firstArray);
+Console.WriteLine();
+Console.WriteLine("Получился массив:");
+PrintArray(sortArray);
