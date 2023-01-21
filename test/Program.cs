@@ -55,7 +55,7 @@ string[] sortedArray(string[] array)
         if (array[i].Length <= 3)
         {
             sortedArray[j] = array[i];
-            j += 1;
+            j++;
         }
         else;
     }
